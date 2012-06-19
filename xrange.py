@@ -34,7 +34,7 @@ class xrange(Sequence):
         self._start = start
         self._stop = stop
         self._step = step
-        self._len = int(ceil(float(stop - start) / step))
+        self._len = (stop - start) // step + bool((stop - start) % step)
 
     def __repr__(self):
         if self._start == 0 and self._step == 1:

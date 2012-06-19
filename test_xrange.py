@@ -251,6 +251,15 @@ class XrangeTests(unittest.TestCase):
         r = xrange(5, 3, -2)
         self.assertEqual(1, len(r))
 
+    def test_large_nums(self):
+        r = xrange(2**64 + 1)
+        self.assertEqual(r._len, 2**64 + 1)
+        # note, however, that you can't use len() on
+        # such an xrange, as the return value of len()
+        # must be expressable as a C (unsigned?) long
+
+        self.assertEqual(r[0], 0)
+        self.assertEqual(r[-1], 2**64)
 
 if __name__ == '__main__':
     unittest.main()
