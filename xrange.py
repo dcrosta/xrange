@@ -131,7 +131,7 @@ class xrangeiterator(Iterator):
     def __init__(self, xrangeobj):
         self._xrange = xrangeobj
 
-        # Intialize the "last outputted value" to the value
+        # Initialize the "last outputted value" to the value
         # just before the first value; this simplifies next()
         self._last = self._xrange._start - self._xrange._step
         self._count = 0
