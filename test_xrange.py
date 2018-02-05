@@ -1,8 +1,10 @@
 import unittest
 from xrange import xrange
 
+
 def getitem(obj, index):
     return obj[index]
+
 
 class XrangeTests(unittest.TestCase):
 
@@ -261,6 +263,6 @@ class XrangeTests(unittest.TestCase):
         self.assertEqual(r[0], 0)
         self.assertEqual(r[-1], 2**64)
 
+
 if __name__ == '__main__':
     unittest.main()
-
